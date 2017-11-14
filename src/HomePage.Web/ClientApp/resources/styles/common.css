@@ -1,0 +1,16 @@
+div.has-error .k-widget
+{
+  border: 1px solid #a94442 !important;
+}
+
+@media (max-width: 767px) {
+    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */
+    .body-content {
+        padding-top: 50px;
+    }
+}
+
+ux-dialog-overlay.active {
+    background-color: black;
+    opacity: .5;
+  }

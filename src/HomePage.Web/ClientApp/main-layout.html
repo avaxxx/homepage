@@ -1,0 +1,18 @@
+  <template>
+    <require from="./areas/app/components/navmenu/navmenu.html"></require>
+    <require from="./resources/styles/common.css" as="scoped"></require>
+    <require from="./resources/elements/locale-picker/locale-picker"></require>  
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3">
+                <navmenu router.bind="router"></navmenu>
+            </div>
+            <div class="col-sm-9 body-content">
+                 <open-id-connect-user-block></open-id-connect-user-block>    
+                 <locale-picker></locale-picker>
+                 <slot name="main-content"></slot>
+                
+            </div>
+        </div>
+    </div>
+</template>

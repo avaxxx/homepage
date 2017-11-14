@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipDefaultLibCheck": true,
+    "lib": [ "es2015", "dom" ],
+    "types": [ "node", "@types/kendo-ui", "@types/googlemaps"  ],
+    "jsx": "react",
+    "baseUrl": "./ClientApp"
+    // "strictNullChecks": true
+  },
+  "exclude": [ "bin", "node_modules" ]
+  // "atom": { "rewriteTsconfig": false }
+}
