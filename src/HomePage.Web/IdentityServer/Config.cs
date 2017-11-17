@@ -40,7 +40,7 @@ namespace HomePage.Web.IdentityServer
         
 
         // clients want to access resources (aka scopes)
-        public static IEnumerable<Client> GetClients()
+        public static IEnumerable<Client> GetClients(string IdentityServerUrl)
         {
             // client credentials client
             return new List<Client>
@@ -85,8 +85,8 @@ namespace HomePage.Web.IdentityServer
                     },
                     AlwaysIncludeUserClaimsInIdToken = true, 
 
-                    RedirectUris = { "http://localhost:5000/signin-oidc" },
-                    PostLogoutRedirectUris = { "http://localhost:5000/signout-callback-oidc" },
+                    RedirectUris = { $"{IdentityServerUrl}/signin-oidc" },
+                    PostLogoutRedirectUris = { $"{IdentityServerUrl}/signout-callback-oidc" },
 
                     AllowedScopes =
                     {
@@ -106,8 +106,8 @@ namespace HomePage.Web.IdentityServer
                     RequireConsent = false,
                     AlwaysIncludeUserClaimsInIdToken = true, 
                     AllowOfflineAccess = true,
-                    RedirectUris = { "http://localhost:5000/singin-success" },
-                    PostLogoutRedirectUris = { "http://localhost:5000/singin-success" },
+                    RedirectUris = { $"{IdentityServerUrl}/singin-success" },
+                    PostLogoutRedirectUris = { $"{IdentityServerUrl}/singin-success" },
 
                     AllowedScopes =
                     {

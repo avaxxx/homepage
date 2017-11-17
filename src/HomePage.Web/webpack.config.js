@@ -3,6 +3,7 @@ const  webpack = require('webpack');
 const { AureliaPlugin, ModuleDependenciesPlugin } = require('aurelia-webpack-plugin');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const bundleOutputDir = './wwwroot/dist';
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env) => {
     const isDevBuild = !(env && env.prod);
@@ -38,6 +39,13 @@ module.exports = (env) => {
             ]
         },
         plugins: [
+            // new CopyWebpackPlugin([
+            //     {
+            //         from: path.join(__dirname,"./ClientApp/resources/enviroments/development.ts"),
+            //         to: path.join(__dirname,"./ClientApp/enviroment.ts")
+            //     }], {
+            //         copyUnmodified: false
+            //     }),
             new CheckerPlugin(),            
             new webpack.DefinePlugin({ IS_DEV_BUILD: JSON.stringify(isDevBuild) }),
             new webpack.DllReferencePlugin({
@@ -51,6 +59,7 @@ module.exports = (env) => {
                 'window.jQuery': 'jquery',
               }),
             new AureliaPlugin({ aureliaApp: 'boot' }),
+ 
             new ModuleDependenciesPlugin({
                 "aurelia-authentication": ["./authFilterValueConverter"],
                 "aurelia-open-id-connect": [

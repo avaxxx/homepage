@@ -1,0 +1,12 @@
+{
+    "name": "prepare",
+    "description": "Prepare application",
+    "flags": [
+      {
+        "name": "env",
+        "description": "Sets the build environment.",
+        "type": "string"
+      }      
+    ]
+  }
+  

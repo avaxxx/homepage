@@ -22,6 +22,7 @@ Bluebird.config({ warnings: { wForgottenReturn: false }, longStackTraces: false 
 //import {TaskQueue} from 'aurelia-task-queue';
 // PLATFORM.moduleName("./locales/en/translation.json");
 // PLATFORM.moduleName("./locales/fr/translation.json");
+// PLATFORM.moduleName("./config/config.json");
 export function configure(aurelia: Aurelia) {
         if (!global.Intl) {
             console.log('Intl not present');
@@ -39,6 +40,7 @@ export function configure(aurelia: Aurelia) {
 }
 
 function boot(aurelia: Aurelia) {
+    console.log('IsDevBuild - ' + IS_DEV_BUILD);
     aurelia.use.standardConfiguration()
     .plugin(PLATFORM.moduleName('aurelia-kendoui-bridge'))
     .plugin(PLATFORM.moduleName('aurelia-dialog'))
@@ -75,9 +77,9 @@ function boot(aurelia: Aurelia) {
                 caches: ['localStorage', 'cookie']
             },
             attributes: aliases,
-            //lng: 'en',
+            // lng: 'en',
             fallbackLng: 'en',
-            debug: true
+            debug: IS_DEV_BUILD
         });
     })
     .feature(PLATFORM.moduleName('resources/index'));

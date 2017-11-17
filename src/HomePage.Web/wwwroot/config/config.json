@@ -1,0 +1,10 @@
+{
+    "development": {
+        "identityServerUrl": "http://localhost:5000",
+        "app_name": "Aurelia Dev"
+    },
+    "production": {
+        "identityServerUrl": "http://localhost:5000",
+        "app_name": "Aurelia Prod"
+    }
+}
