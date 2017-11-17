@@ -182,6 +182,7 @@ BundleArtifacts/
 
 # Others
 ClientBin/
+src/Homepage.Web/wwwroot/dist/
 ~$*
 *~
 *.dbmdl
